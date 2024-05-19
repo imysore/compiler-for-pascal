@@ -1,0 +1,17 @@
+	# This is an auto-generated file with MIPS Code generated from a Pascal program, using Ishan's compiler.
+	# @author Ishan Mysore
+	# @version 01-08-2024 14:21:43
+	.data
+	nL: .asciiz "\n"
+	.text
+	.globl main
+main:
+	li $v0 5	# stores number's value into $v0
+	move $a0 $v0
+	li $v0 1
+	syscall
+	li $v0 4
+	la $a0, nL	# prints newline statement
+	syscall
+	li $v0, 10	# normal termination
+	syscall

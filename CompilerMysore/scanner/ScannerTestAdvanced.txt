@@ -1,0 +1,18 @@
+VAR x;
+PROCEDURE square(n);
+BEGIN
+RETURN n * n; // blah blah blah
+END;
+BEGIN
+/*
+* Please * ignore * this * I * beg * you
+*/
+x := 1;
+WHILE x <= 10 DO
+BEGIN
+WRITELN(square(x));
+x := x + 1;
+-3;
+END;
+END;
+.

@@ -1,0 +1,12 @@
+x := 3;
+y := 4;
+
+IF x > y THEN 
+BEGIN
+    WRITELN(x + y);
+END;
+ELSE
+BEGIN  
+    WRITELN(x - y);
+END;
+.

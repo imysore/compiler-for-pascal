@@ -1,0 +1,43 @@
+	# This is an auto-generated file with MIPS Code generated from a Pascal program, using Ishan's compiler.
+	# @author Ishan Mysore
+	# @version 01-08-2024 14:21:43
+	.data
+	nL: .asciiz "\n"
+	varcount:	.word 0
+	.text
+	.globl main
+main:
+	li $v0 1	# stores number's value into $v0
+	la $t0 varcount		# loads the variable name into $t0
+	sw $v0 ($t0)		# stores the contents of $t0 into $v0
+while0:
+	la $t0 varcount	# loads variable name into $t0
+	lw $v0 ($t0)	# loads value associated with the variable's address into $v0
+	subu $sp $sp 4
+	sw $v0 ($sp) 	 # push $v0
+	li $v0 15	# stores number's value into $v0
+	lw $t0 ($sp) 	 # pop $v0
+	addu $sp $sp 4
+	bgt $t0 $v0 whileEnd0	# jumps to target label if $t0 is greater than $v0
+	la $t0 varcount	# loads variable name into $t0
+	lw $v0 ($t0)	# loads value associated with the variable's address into $v0
+	move $a0 $v0
+	li $v0 1
+	syscall
+	li $v0 4
+	la $a0, nL	# prints newline statement
+	syscall
+	la $t0 varcount	# loads variable name into $t0
+	lw $v0 ($t0)	# loads value associated with the variable's address into $v0
+	subu $sp $sp 4
+	sw $v0 ($sp) 	 # push $v0
+	li $v0 1	# stores number's value into $v0
+	lw $t0 ($sp) 	 # pop $v0
+	addu $sp $sp 4
+	addu $v0 $t0 $v0	# adds $v0 and $t0, stores result in $v0
+	la $t0 varcount		# loads the variable name into $t0
+	sw $v0 ($t0)		# stores the contents of $t0 into $v0
+	j while0
+whileEnd0:
+	li $v0, 10	# normal termination
+	syscall
